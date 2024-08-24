@@ -1,0 +1,1 @@
+class ECommerceSellerAdd{constructor(){}init(){new Wizard("#horizontalwizard")}}document.addEventListener("DOMContentLoaded",function(e){(new ECommerceSellerAdd).init()});
