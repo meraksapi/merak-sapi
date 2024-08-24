@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merak Sapi</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        .bg-image {
+            position: relative;
+            background-image: url('assets/img/Merak\ Sapi.png'); /* Ganti dengan URL gambar Anda */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        /* Overlay */
+        .bg-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Overlay hitam dengan transparansi 50% */
+            z-index: 1;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5); /* Transparansi pada navbar */
+            z-index: 2;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+        }
+
+        .content {
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding-top: 100px;
+            }
+        }
+
+        @keyframes typing {
+            0% { width: 0; }
+            50% { width: 100%; }
+            100% { width: 0; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+
+        .text-typing {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 0.15em solid white;
+            animation: typing 15s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
+        }
+
+        .gallery-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+            border-radius: 8px;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h5 {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">BrandName</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+
+    <!-- Background Image with Overlay -->
+    <div class="bg-image d-flex justify-content-center align-items-center">
+        <div class="content">
+            <h1 class="text-white fw-bold text-typing">My way of saying I love you is from here</h1>
+            <!-- <a href="#" class="btn btn-purple">Moment</a> -->
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="row g-3">
+
+                <!-- Potrait -->
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/8.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal1">
+                        <img src="assets/img/8.jpg" alt="Gallery Image 1">
+                        <div class="gallery-overlay">
+                            <h5>Yearbook</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/5.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal2">
+                        <img src="assets/img/5.jpg" alt="Gallery Image 2">
+                        <div class="gallery-overlay">
+                            <h5>Fashion Show</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/9.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal3">
+                        <img src="assets/img/9.jpg" alt="Gallery Image 3">
+                        <div class="gallery-overlay">
+                            <h5>Foto Studio</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/32.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal4">
+                        <img src="assets/img/32.jpg" alt="Gallery Image 4">
+                        <div class="gallery-overlay">
+                            <h5>Mobil</h5>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- landscape -->
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/16.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal5">
+                        <img src="assets/img/16.jpg" alt="Gallery Image 1">
+                        <div class="gallery-overlay">
+                            <h5>Purbayasa</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/38.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal6">
+                        <img src="assets/img/38.jpg" alt="Gallery Image 2">
+                        <div class="gallery-overlay">
+                            <h5>Kebun Raya</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/27.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal7">
+                        <img src="assets/img/27.jpg" alt="Gallery Image 3">
+                        <div class="gallery-overlay">
+                            <h5>Goa Lawa</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/31.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal8">
+                        <img src="assets/img/31.jpg" alt="Gallery Image 4">
+                        <div class="gallery-overlay">
+                            <h5>Goa Lawa</h5>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Potrait -->
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/10.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal9">
+                        <img src="assets/img/10.jpg" alt="Gallery Image 1">
+                        <div class="gallery-overlay">
+                            <h5>Foo Studio</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/20.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal10">
+                        <img src="assets/img/20.jpg" alt="Gallery Image 2">
+                        <div class="gallery-overlay">
+                            <h5>Graduation</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/15.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal11">
+                        <img src="assets/img/15.jpg" alt="Gallery Image 3">
+                        <div class="gallery-overlay">
+                            <h5>Purbayasa</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/28.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal12">
+                        <img src="assets/img/28.jpg" alt="Gallery Image 4">
+                        <div class="gallery-overlay">
+                            <h5>Goa Lawa</h5>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- potrait -->
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/11.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal13">
+                        <img src="assets/img/11.jpg" alt="Gallery Image 1">
+                        <div class="gallery-overlay">
+                            <h5>Mall</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/40.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal14">
+                        <img src="assets/img/40.jpg" alt="Gallery Image 2">
+                        <div class="gallery-overlay">
+                            <h5>Kebun Raya</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/35.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal15">
+                        <img src="assets/img/35.jpg" alt="Gallery Image 3">
+                        <div class="gallery-overlay">
+                            <h5>Kebun Raya</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/41.jpeg" data-bs-toggle="modal" data-bs-target="#lightboxModal16">
+                        <img src="assets/img/41.jpeg" alt="Gallery Image 4">
+                        <div class="gallery-overlay">
+                            <h5>Kartini Day</h5>
+                        </div>
+                    </a>
+                </div>
+
+
+                <!-- landscape -->
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/24.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal17">
+                        <img src="assets/img/24.jpg" alt="Gallery Image 1">
+                        <div class="gallery-overlay">
+                            <h5>Jenggala</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/17.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal18">
+                        <img src="assets/img/17.jpg" alt="Gallery Image 2">
+                        <div class="gallery-overlay">
+                            <h5>Purbayasa</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/34.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal19">
+                        <img src="assets/img/34.jpg" alt="Gallery Image 3">
+                        <div class="gallery-overlay">
+                            <h5>Kebun Raya</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/38.jpg" data-bs-toggle="modal" data-bs-target="#lightboxModal20">
+                        <img src="assets/img/38.jpg" alt="Gallery Image 4">
+                        <div class="gallery-overlay">
+                            <h5>Kebun Raya</h5>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- potrait -->
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/43.jpeg" data-bs-toggle="modal" data-bs-target="#lightboxModal21">
+                        <img src="assets/img/43.jpeg" alt="Gallery Image 3">
+                        <div class="gallery-overlay">
+                            <h5>Kumpe</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6 gallery-item">
+                    <a href="assets/img/42.jpeg" data-bs-toggle="modal" data-bs-target="#lightboxModal22">
+                        <img src="assets/img/42.jpeg" alt="Gallery Image 4">
+                        <div class="gallery-overlay">
+                            <h5>Kumpe</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modals -->
+
+    <!-- 1 sampai 4 -->
+    <div class="modal fade" id="lightboxModal1" tabindex="-1" aria-labelledby="lightboxLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/8.jpg" class="img-fluid" alt="Gallery Image 1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal2" tabindex="-1" aria-labelledby="lightboxLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/5.jpg" class="img-fluid" alt="Gallery Image 2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal3" tabindex="-1" aria-labelledby="lightboxLabel3" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/9.jpg" class="img-fluid" alt="Gallery Image 3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal4" tabindex="-1" aria-labelledby="lightboxLabel4" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/32.jpg" class="img-fluid" alt="Gallery Image 4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5 sampai 8 -->
+    <div class="modal fade" id="lightboxModal5" tabindex="-1" aria-labelledby="lightboxLabel5" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/16.jpg" class="img-fluid" alt="Gallery Image 5">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal6" tabindex="-1" aria-labelledby="lightboxLabel6" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/38.jpg" class="img-fluid" alt="Gallery Image 2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal7" tabindex="-1" aria-labelledby="lightboxLabel7" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/27.jpg" class="img-fluid" alt="Gallery Image 3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal8" tabindex="-1" aria-labelledby="lightboxLabel8" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/31.jpg" class="img-fluid" alt="Gallery Image 4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9 sampai 12 -->
+    <div class="modal fade" id="lightboxModal9" tabindex="-1" aria-labelledby="lightboxLabel9" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/10.jpg" class="img-fluid" alt="Gallery Image 9">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal10" tabindex="-1" aria-labelledby="lightboxLabel10" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/20.jpg" class="img-fluid" alt="Gallery Image 2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal11" tabindex="-1" aria-labelledby="lightboxLabel11" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/15.jpg" class="img-fluid" alt="Gallery Image 3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal12" tabindex="-1" aria-labelledby="lightboxLabel12" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/28.jpg" class="img-fluid" alt="Gallery Image 4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 13 sampai 16 -->
+    <div class="modal fade" id="lightboxModal13" tabindex="-1" aria-labelledby="lightboxLabel13" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/10.jpg" class="img-fluid" alt="Gallery Image 9">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal14" tabindex="-1" aria-labelledby="lightboxLabel14" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/20.jpg" class="img-fluid" alt="Gallery Image 2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal15" tabindex="-1" aria-labelledby="lightboxLabel15" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/15.jpg" class="img-fluid" alt="Gallery Image 3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal16" tabindex="-1" aria-labelledby="lightboxLabel16" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/28.jpg" class="img-fluid" alt="Gallery Image 4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 17 sampai 20 -->
+    <div class="modal fade" id="lightboxModal17" tabindex="-1" aria-labelledby="lightboxLabel17" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/24.jpg" class="img-fluid" alt="Gallery Image 9">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal18" tabindex="-1" aria-labelledby="lightboxLabel18" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/17.jpg" class="img-fluid" alt="Gallery Image 2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal19" tabindex="-1" aria-labelledby="lightboxLabel19" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/34.jpg" class="img-fluid" alt="Gallery Image 3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal20" tabindex="-1" aria-labelledby="lightboxLabel20" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/38.jpg" class="img-fluid" alt="Gallery Image 4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal21" tabindex="-1" aria-labelledby="lightboxLabel21" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/43.jpeg" class="img-fluid" alt="Gallery Image 3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal22" tabindex="-1" aria-labelledby="lightboxLabel22" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/42.jpeg" class="img-fluid" alt="Gallery Image 4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
